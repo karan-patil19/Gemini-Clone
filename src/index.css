@@ -1,26 +1,131 @@
+:root {
+  --bg: #ffffff;
+  --sidebar: #f0f4f9;
+  --surface: #f0f4f9;
+  --surface-2: #e9eef6;
+  --composer: #ffffff;
+  --composer-border: #dde3ea;
+  --menu: #ffffff;
+  --text: #1f1f1f;
+  --text-muted: #444746;
+  --text-subtle: #747775;
+  --hover: rgba(68, 71, 70, 0.08);
+  --active: #d3e3fd;
+  --active-text: #041e49;
+  --accent: #0b57d0;
+  --border: #dde3ea;
+  --user-bubble: #e9eef6;
+  --code-bg: #f0f4f9;
+  --code-head: #e1e7ef;
+  --danger: #b3261e;
+  --error-bg: #fce8e6;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --composer-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shimmer-a: #e8f0fe;
+  --shimmer-b: #a8c7fa;
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+  /* syntax colors */
+  --hl-keyword: #a626a4;
+  --hl-string: #50a14f;
+  --hl-number: #986801;
+  --hl-comment: #8e908c;
+  --hl-title: #4078f2;
+  --hl-attr: #c18401;
+  --hl-built: #0184bb;
 
-*{
-  padding: 0;
-  margin: 0;
+  color-scheme: light;
+  font-family: "Google Sans", "Google Sans Text", "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+:root[data-theme="dark"] {
+  --bg: #131314;
+  --sidebar: #1e1f20;
+  --surface: #1e1f20;
+  --surface-2: #282a2c;
+  --composer: #1e1f20;
+  --composer-border: #3c4043;
+  --menu: #282a2c;
+  --text: #e3e3e3;
+  --text-muted: #c4c7c5;
+  --text-subtle: #8e918f;
+  --hover: rgba(227, 227, 227, 0.08);
+  --active: #1f3760;
+  --active-text: #d3e3fd;
+  --accent: #a8c7fa;
+  --border: #3c4043;
+  --user-bubble: #333537;
+  --code-bg: #1e1f20;
+  --code-head: #2c2d2f;
+  --danger: #f2b8b5;
+  --error-bg: #3b1d1b;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --composer-shadow: none;
+  --shimmer-a: #1e2a3a;
+  --shimmer-b: #3f5f8f;
+
+  --hl-keyword: #c678dd;
+  --hl-string: #98c379;
+  --hl-number: #d19a66;
+  --hl-comment: #7f848e;
+  --hl-title: #61afef;
+  --hl-attr: #e5c07b;
+  --hl-built: #56b6c2;
+
+  color-scheme: dark;
+}
+
+* {
   box-sizing: border-box;
-  font-family: Outfit;
- 
-  
 }
 
-#root{
-  min-height: 100vh;
-  display: flex;
-  animation: fadeIn 1.5s;
+html,
+body,
+#root {
+  height: 100%;
 }
 
-@keyframes fadeIn {
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }
